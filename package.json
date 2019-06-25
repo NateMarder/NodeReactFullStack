@@ -2,9 +2,13 @@
   "name": "node-react-practice",
   "version": "1.0.0",
   "description": "A place to practice node and react skills.",
+  "engines": {
+    "node": "8.1.1",
+    "npm": "5.0.3"
+  },
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -17,6 +21,7 @@
   },
   "homepage": "https://github.com/NateMarder/NodeReactFullStack#readme",
   "dependencies": {
+    "express": "^4.17.1",
     "install-peerdeps": "^1.10.2",
     "lodash": "^4.17.11"
   },
