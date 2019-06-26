@@ -1,0 +1,5 @@
+{
+  "editor.codeActionsOnSaveTimeout": 100,
+  "eslint.autoFixOnSave": true,
+  "editor.formatOnSaveTimeout": 100
+}
