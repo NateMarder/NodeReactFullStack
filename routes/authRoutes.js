@@ -13,12 +13,18 @@ module.exports = (app) => {
     }),
   );
 
-  // google strategy should see that there is a code and respond appropriately
-  app.get('/auth/google/callback', passport.authenticate('google'));
+  // // google strategy should see that there is a code and respond appropriately
+  app.get(
+    '/auth/google/callback',
+    passport.authenticate('google'),
+    (req, res) => {
+      res.redirect('/surveys');
+    },
+  );
 
-  app.get('api/logout', (req, res) => {
+  app.get('/api/logout', (req, res) => {
     req.logout();
-    res.send(req.user);
+    res.redirect('/');
   });
 
   app.get('/api/current_user', (req, res) => {
