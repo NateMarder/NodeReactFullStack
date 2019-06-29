@@ -1,3 +1,4 @@
 // enables environment-determined configs
 module.exports = process.env.NODE_ENV === 'production'
-  ? require('./prod') : require('./dev');
+  ? require('./prod')
+  : require('./dev');
