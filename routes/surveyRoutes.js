@@ -7,6 +7,10 @@ const surveyTemplate = require('../services/emailTemplates/surveyTemplate');
 const Mailer = require('../services/Mailer');
 
 module.exports = (app) => {
+  app.get('/api/surveys/thanks', (req, res) => {
+    res.send('Thanks for your feedback!');
+  });
+
   app.post('/api/surveys', requireLogin, requireCredits, async (req, res) => {
     const {
       title,
@@ -26,9 +30,15 @@ module.exports = (app) => {
 
     const mailer = new Mailer(survey, surveyTemplate(survey));
 
-    await mailer.send();
-    await survey.save();
+    try {
+      await mailer.send();
+      await survey.save();
+      req.user.credits -= 1;
+      const user = await req.user.save();
 
-    res.send(survey);
+      res.send(user);
+    } catch (err) {
+      res.status(422).send(err);
+    }
   });
 };
