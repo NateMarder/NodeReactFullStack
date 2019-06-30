@@ -1,10 +1,10 @@
 {
-  "name": "node-react-practice",
+  "name": "emaily-server",
   "version": "1.0.0",
   "description": "A place to practice node and react skills.",
   "engines": {
-    "node": "8.1.1",
-    "npm": "5.0.3"
+    "node": "10.16.0",
+    "npm": "6.9.0"
   },
   "main": "index.js",
   "scripts": {
@@ -12,7 +12,8 @@
     "server": "nodemon index.js",
     "client": "npm run start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false && npm i --prefix client && npm run build --prefix client"
+    "heroku-prebuild": "NPM_CONFIG_PRODUCTION=false",
+    "heroku-postbuild": "npm install --prefix client && npm run build --prefix client && NPM_CONFIG_PRODUCTION=false"
   },
   "repository": {
     "type": "git",
