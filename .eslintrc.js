@@ -25,5 +25,6 @@ module.exports = {
     "no-console": "off",
     "global-require": "warn",
     "consistent-return": "warn",
+    "class-methods-use-this": "off",
   },
 };
