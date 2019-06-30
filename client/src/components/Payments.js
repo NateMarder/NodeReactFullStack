@@ -1,10 +1,15 @@
 import React, {Component} from 'react';
+import Stripe from 'stripe';
 import StripeCheckout from 'react-stripe-checkout';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 
 class Payments extends Component {
   render() {
+
+    // stripe wants this set
+    Stripe.setPublishableKey(process.env.REACT_APP_STRIPE_KEY);
+
     return (
       <StripeCheckout
         name="Emaily"
@@ -13,7 +18,6 @@ class Payments extends Component {
         token={token => this.props.handleToken(token)}
         key={process.env.REACT_APP_STRIPE_KEY}
       >
-        {/* optional customized button */}
         <button className="btn">
           Add Credits
         </button>
