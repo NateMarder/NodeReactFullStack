@@ -24,7 +24,8 @@ class Header extends Component {
     return (
       <nav>
         <div className="nav-wrapper blue">
-          <Link to={this.props.auth ? '/surveys' : '/' } className="left brand-logo">Some Application Name</Link>
+          <Link to={this.props.auth ? '/surveys' : '/'} className="left brand-logo">
+            <i style={{ fontSize: '4rem', color: '#444' }} className="large material-icons">polymer</i></Link>
           <ul className="right">
             {this.renderContent()}
           </ul>
