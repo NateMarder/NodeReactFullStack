@@ -5,23 +5,15 @@ import { reduxForm, Field } from 'redux-form';
 import SurveyField from './SurveyField';
 import { Redirect } from 'react-router';
 import validateEmails from '../../utils/validateEmails';
-
-const FIELDS = [
-  { label: 'Survey Title', name: 'title' },
-  { label: 'Subject Line', name: 'subject' },
-  { label: 'Email Body', name: 'body' },
-  { label: 'Recipients', name: 'emails' },
-];
+import formFields from '../surveys/formFields';
 
 class SurveyForm extends Component {
-  state = {redirect: false};
+  state = { redirect: false };
   
   renderFields() {
-    return _.map(FIELDS, ({ label, name}) => {
-      return (
-        <Field key={name} component={SurveyField} label={label} name={name} type="text" />
-      );
-    }); 
+    return _.map(formFields, ({ label, name }) => 
+      <Field key={name} component={SurveyField} label={label} name={name} type="text" />
+    ); 
   }
 
   onCancelClick = () => {
@@ -34,17 +26,18 @@ class SurveyForm extends Component {
     }
 
     return (
-      <>
-        <form onSubmit={this.props.handleSubmit(values => {console.log(values)})}>
+      <div>
+        <h5>Create New Survey</h5>
+        <form onSubmit={this.props.handleSubmit(this.props.onSurveySubmit)}>
           {this.renderFields()}
-          <button className="teal flat right btn" type="submit">
-            Next<i className="material-icons right">done</i>
-          </button>
           <button className="red accent-2 flat left btn" onClick={this.onCancelClick} type="button">
             Cancel<i className="material-icons right">block</i>
           </button>
+          <button className="green right btn white-text" type="submit">
+            Next<i className="material-icons right">done</i>
+          </button>
         </form>
-      </>
+      </div>
     );
   }
 }
@@ -63,9 +56,9 @@ class SurveyForm extends Component {
 function validate(values) {
   const errors = {};
   
-  errors.emails = validateEmails(values.emails || '');
+  errors.recipients = validateEmails(values.recipients || '');
 
-  _.each(FIELDS, ({ name }) => {
+  _.each(formFields, ({ name }) => {
     if (!values[name]) {
       errors[name] = `A survey ${name} must be provided`;
     }
@@ -78,4 +71,5 @@ function validate(values) {
 export default reduxForm({
   validate,
   form: 'surveyForm',
+  destroyOnUnmount: false, 
 })(SurveyForm);
