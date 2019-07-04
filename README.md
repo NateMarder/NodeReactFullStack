@@ -8,6 +8,8 @@
  - [OAuth Via Google](#oauth-via-google)
  - [Helpful Notes](#helpful-notes)
  - [MongoDB](#mongodb)
+ - [SendGrid](#sendGrid)
+ - [Heroku](#heroku)
 
 ---
 
@@ -27,11 +29,35 @@
 - We will use remotely hosted situation...
 - Go here to the [**emaily dashboard on Cloud Atlas**](https://cloud.mongodb.com/v2/5d13b34bd5ec13b6c2d7d1f2#clusters) to see/manage mongo stuff on remotely hosted mongo server
 
+## SendGrid
+
+- There are several email solutions. This is the one used by this app.
+- Go [**here to see sendgrid documentation**]('https://sendgrid.com/solutions/email-api/').
+
+
 ## Helpful Notes
 
-### &nbsp; The Tutorial From Grider
+### &nbsp; Tutorials From SG
 
 - [_LINK TO GRIDER'S UDEMY TUTORIAL_](https://www.udemy.com/node-with-react-fullstack-web-development)
+- *_More Stephen Grider Courses:_*
+    ``` 
+    Modern React with Redux - https://www.udemy.com/react-redux/?couponCode=4MORE1234
+    
+    Node with React: Fullstack Web Development - https://www.udemy.com/node-with-react-fullstack-web-development/?couponCode=4MORE1234
+    
+    The Complete React Native and Redux Course - https://www.udemy.com/the-complete-react-native-and-redux-course/?couponCode=4MORE1234
+    
+    React Native: Advanced Concepts - https://www.udemy.com/react-native-advanced/?couponCode=4MORE1234
+    
+    GraphQL With React: The Complete Developer's Guide - https://www.udemy.com/graphql-with-react-course/?couponCode=4MORE1234
+    
+    Server Side Rendering with React and Redux - https://www.udemy.com/server-side-rendering-with-react-and-redux/?couponCode=4MORE1234
+    
+    Advanced React and Redux - https://www.udemy.com/react-redux-tutorial/?couponCode=4MORE1234
+    ```
+
+
 
 ### &nbsp; Heroku Deloyments
 
