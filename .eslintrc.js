@@ -26,5 +26,7 @@ module.exports = {
     "global-require": "warn",
     "consistent-return": "warn",
     "class-methods-use-this": "off",
+    "array-callback-return": "warn",
+    "anchor-is-valid": "off",
   },
 };
