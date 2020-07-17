@@ -33,7 +33,7 @@
     "express": "^4.17.1",
     "install-peerdeps": "^1.10.2",
     "localtunnel": "^1.9.2",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.19",
     "mongoose": "^5.6.1",
     "nodemon": "^1.19.1",
     "passport": "^0.4.0",
